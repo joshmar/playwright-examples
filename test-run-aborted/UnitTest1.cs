@@ -48,6 +48,9 @@ public class Tests : BasePageTest
         await Page.Locator("#firstHeading").GetByText("Software testing").ClickAsync();
     }
 
+    /// <summary>
+    /// You can uncomment this to be sure that its not intervening with the results
+    /// </summary>
     private static int _count = 0;
 
     [Test]
@@ -63,7 +66,7 @@ public class Tests : BasePageTest
 
         if (_count == 4)
         {
-            throw new Exception("this one should continue with the other test fixtures");
+            throw new Exception("This exception will only fail the corresponding test");
         }
         _count++;
 

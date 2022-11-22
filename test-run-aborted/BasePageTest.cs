@@ -74,10 +74,14 @@ public abstract class BasePageTest : BrowserTest
         });
 
         Page.SetDefaultTimeout(50000);
-
+        
         //Page.RequestFinished += Testing_Exception;
     }
 
+    /// <summary>
+    /// Uncomment this part including the eventhandle to test the case in which the tests will fail
+    /// </summary>
+    /// <returns></returns>
     //private static int _eventCounter = 0;
 
     //private void Testing_Exception(object? sender, IRequest e)
