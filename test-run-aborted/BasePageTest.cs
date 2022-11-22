@@ -12,7 +12,23 @@ public abstract class BasePageTest : BrowserTest
 
     protected static Devices[] GetDevices()
     {
-        return Enum.GetValues<Devices>().Except( new[] { Devices.Invalid }).ToArray();
+        return Enum.GetValues<Devices>().Except( new[] { 
+            Devices.Invalid,
+            Devices.IphoneSE,
+            Devices.IphoneXR,
+            Devices.Iphone12Pro,
+            Devices.SamsungGalaxyS8Plus,
+            Devices.SamsungGalaxyS20Ultra,
+            Devices.SamsungGalaxyA51A71,
+            Devices.GalaxyFold,
+            Devices.Pixel5,
+            Devices.SurvaceDuo,
+            Devices.NestHub,
+            Devices.IpadAir,
+            Devices.IpadMini,
+            Devices.NestHubMax,
+            Devices.SurvacePro7
+        }).ToArray();
     }
 
     private BrowserNewContextOptions ContextOptions => new()
@@ -58,7 +74,21 @@ public abstract class BasePageTest : BrowserTest
         });
 
         Page.SetDefaultTimeout(50000);
+
+        //Page.RequestFinished += Testing_Exception;
     }
+
+    //private static int _eventCounter = 0;
+
+    //private void Testing_Exception(object? sender, IRequest e)
+    //{
+    //    if (_eventCounter == 5)
+    //    {
+    //        throw new Exception("This throw will crash all other tets...");
+    //    }
+
+    //    _eventCounter++;
+    //}
 
     [TearDown]
     public async Task Recording()
